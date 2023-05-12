@@ -1,5 +1,6 @@
 body {
     background-color: #e5e5e5 !important;
+    margin: 0;
 }
 
 h1 {
@@ -230,52 +231,108 @@ b {
 /* Percentages */
 
 .sixty {
-    position: relative;
-    width: 150px;
-    height: 2px;
-    margin-left: 10px;
-    background: #FFB400;
+    display: flex;
+    align-items: center;
+    border: 1px solid #FFB400;
+    width: 221px;
+    height: 5px;
+    border-radius: 50px;
+    padding-left: 1.5px;
 }
-.seventy {
-    position: relative;
-    width: 160px;
-    height: 2px;
-    margin-left: 10px;
-    margin-bottom: 10px;
-    background: #FFB400;
-}
-.eighty {
-    position: relative;
-    width: 170px;
-    height: 2px;
-    margin-left: 10px;
-    margin-bottom: 10px;
-    background: #FFB400;
-}
-.eighty5 {
-    position: relative;
-    width: 180px;
-    height: 2px;
-    margin-left: 10px;
-    margin-bottom: 10px;
-    background: #FFB400;
-}
-.ninety {
-    position: relative;
+.sixtySpan {
+    display: block;
     width: 190px;
     height: 2px;
-    margin-left: 10px;
+    background-color: #FFB400;
+    border-radius: 50px;
+    }
+.seventy {
+    display: flex;
+    align-items: center;
+    border: 1px solid #FFB400;
+    width: 221px;
+    height: 5px;
     margin-bottom: 10px;
-    background: #FFB400;
+    border-radius: 50px;
+    padding-left: 1.5px;
 }
-.hundred {
-    position: relative;
-    width: 200px;
+.seventySpan {
+    display: block;
+    width: 185px;
     height: 2px;
-    margin-left: 10px;
-    margin-bottom: 10px;
-    background: #FFB400;
+    background-color: #FFB400;
+    border-radius: 50px;
+    }
+.eighty {
+    display: flex;
+    align-items: center;
+    border: 1px solid #FFB400;
+    display: flex;
+    align-items: center;
+    border: 1px solid #FFB400;
+    width: 221px;
+    height: 5px;
+    border-radius: 50px;
+    margin-bottom: 10px; 
 }
+.eightySpan {
+display: block;
+width: 201px;
+height: 2px;
+background-color: #FFB400;
+border-radius: 50px;
+}
+.eighty5 {
+    display: flex;
+    align-items: center;
+    border: 1px solid #FFB400;
+    width: 221px;
+    height: 5px;
+    margin-bottom: 10px;
+    border-radius: 50px;
+    padding-left: 1.5px;
+}
+.eighty5Span {
+    display: block;
+    width: 207px;
+    height: 2px;
+    background-color: #FFB400;
+    border-radius: 50px;
+    }
+.ninety {
+    display: flex;
+    align-items: center;
+    border: 1px solid #FFB400;
+    width: 221px;
+    height: 5px;
+    margin-bottom: 10px;
+    border-radius: 50px;
+    padding-left: 1.5px;
+}
+.ninetySpan {
+    display: block;
+    width: 209px;
+    height: 2px;
+    background-color: #FFB400;
+    border-radius: 50px;
+    }
+.hundred {
+    display: flex;
+    align-items: center;
+    border: 1px solid #FFB400;
+    width: 221px;
+    height: 5px;
+    margin-bottom: 10px;
+ border-radius: 50px;
+ padding-left: 1.5px;
+}
+.hundredSpan {
+    display: block;
+    width: 217px;
+    height: 2px;
+    background-color: #FFB400;
+    border-radius: 50px;
+    }
 
 
 
@@ -293,7 +350,7 @@ b {
 }
 
 .main_frame .left-frame .left5 {
-    width: 186px;
+    width: 200px;
     height: 148px;
     margin-left: 30px;
     margin-bottom: 20px;
@@ -302,6 +359,7 @@ b {
 
 .main_frame .midd-frame {
     position: relative;
+    top: -25px;
     width: 970px;
     height: 1259px;
     margin-left: 30px;
@@ -309,6 +367,45 @@ b {
     display: flex;
     flex-direction: column;
     background-color: #e5e5e5;
+}
+.polygon{
+    position: absolute;
+    right: 30px;
+    top: 450px;
+}
+.ellipse12{
+    position: absolute;
+    top: 80px;
+    left: 400px;
+}
+    
+
+.ellipse13{
+    position: absolute;
+    bottom: 50px;
+    left: 550px;
+}
+.ellipse15{
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+.ellipse16{
+    position: relative;
+    top: 450px;
+    left: 200px;
+  
+}
+.rectangle51{
+    position: absolute;
+   top: 50px;
+   right: 50px;
+}
+.rectangle52{
+    position: absolute;
+    top: 380px;
+    left: 400px;
+    transform: matrix(0.9, 0.43, -0.45, 0.89, 0, 0);
 }
 
 .midd_footer {
@@ -321,8 +418,10 @@ b {
 }
 
 .midd-heading {
+    position: relative;
     margin-bottom: 145px;
     background-color: #fff;
+    background-image: url("shapes/hero.png");
 }
 
 .headingFooter {
@@ -395,7 +494,7 @@ b {
     margin-top: 70px !important;
     width: 152.41px;
     height: 48px;
-
+border: none;
     /* Yellow */
 
     background: #FFB400;
@@ -463,4 +562,9 @@ b {
     width: 40px;
     height: 40px;
     margin-top: 43px;
+}
+.flex1{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
 }

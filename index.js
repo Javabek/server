@@ -26,7 +26,7 @@ app.get("/hello", function (req, res) {
 });
 
 app.get("/", function (req, res) {
-  res.render("harid")
+  res.render("reja")
 });
 
 app.post("/create-item", (req, res) => {
