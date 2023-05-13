@@ -23,8 +23,12 @@
                         <div class="left1_pic">
                             <img src="images/Profile.svg" width="156px" height="142px" alt="profile photo">
                         </div>
-                        <div class="left1_name">Marcos</div>
-                        <div class="left1_prof">Heart</div>
+                        <div class="left1_name">
+                            <%=user.name%>
+                        </div>
+                        <div class="left1_prof"> 
+                            <%= user.profession %>
+                        </div>
                         <div class="left1_icons">
                             <a class="messengers" href="">
                                 <img src="messenger_icon/Facebook.svg" alt="">
@@ -51,11 +55,17 @@
                     <div class="left2">
                         <div class="line">
                             <div class="age">Age</div>
-                            <div class="ageValue">24</div>
+                            <div class="ageValue">
+                                <%= user.age %>
+                            </div>
                         </div>
                         <div class="line">
-                            <div class="residence">Residence</div>
-                            <div class="residendeVal">BD</div>
+                            <div class="residence">
+                                Residence
+                            </div>
+                            <div class="residendeVal">
+                                <%= user.residence %>
+                            </div>
                         </div>
                         <div class="line">
                             <div class="freelance"> Freelance</div>
@@ -64,7 +74,9 @@
                         </div>
                         <div class="line">
                             <div class="address">Address:</div>
-                            <div>Dhaka,Bangladesh</div>
+                            <div>
+                                <%= user.address %>
+                            </div>
                         </div>
                     </div>
     
@@ -72,7 +84,9 @@
                     <div class="left3">
                         <p class="headings">Languages</p>
                         <div class="line3">
-                            <p>Bangla</p>
+                            <p>
+                                <%= user.languages[0] %>
+                            </p>
                             <p>100%</p>
                         </div>
 
@@ -81,7 +95,9 @@
                         </div>
 
                         <div class="line3">
-                            <p>English</p>
+                            <p>
+                                <%= user.languages[2] %>
+                            </p>
                             <p>80%</p>
                         </div>
                        
@@ -90,7 +106,9 @@
                         </div>
 
                         <div class="line3">
-                            <p>Spanish</p>
+                            <p>
+                                <%= user.languages[1] %>
+                            </p>
                             <p>60%</p>
                         </div>
                        
@@ -103,7 +121,9 @@
                     <div class="left4">
                         <p class="headings">Skills</p>
                         <div class="line3">
-                            <p>Html</p>
+                            <p>
+                                <%= user.skills[0] %>
+                            </p>
                             <p>90%</p>
                         </div>
                         
@@ -112,7 +132,7 @@
                         </div>
 
                         <div class="line3">
-                            <p>CSS</p>
+                            <p><%= user.skills[1] %></p>
                             <p>85%</p>
                         </div>
                        
@@ -121,7 +141,7 @@
                         </div>
 
                         <div class="line3">
-                            <p>JS</p>
+                            <p><%= user.skills[2] %></p>
                             <p>80%</p>
                         </div>
                        
@@ -130,7 +150,7 @@
                         </div>
 
                         <div class="line3">
-                            <p>PHP</p>
+                            <p><%= user.skills[3] %></p>
                             <p>75%</p>
                         </div>
                        
@@ -139,7 +159,7 @@
                         </div>
 
                         <div class="line3">
-                            <p>WordPress</p>
+                            <p><%= user.skills[4] %></p>
                             <p>85%</p>
                         </div>
                         
@@ -154,20 +174,20 @@
     
                         <div class="flex1">
                             <img style="margin-bottom: 12px;" src="images/Icons.svg" alt="#">
-                            <p class="extraSkills">Bootstrap, Materialize</p>
+                            <p class="extraSkills"><%= user.extra_skills[0] %></p>
                         </div>
     
                         <div class="flex1">
                             <img style="margin-bottom: 12px;" src="images/Icons.svg" alt="#">
-                            <p class="extraSkills">Styluss, SASS, Less</p>
+                            <p class="extraSkills"><%= user.extra_skills[1] %></p>
                         </div>
                         <div class="flex1">
                             <img style="margin-bottom: 12px;" src="images/Icons.svg" alt="#">
-                            <p class="extraSkills">Gulp, Webpack, Grunt</p>
+                            <p class="extraSkills"><%= user.extra_skills[2] %></p>
                         </div>
                         <div class="flex1">
                             <img style="margin-bottom: 12px;" src="images/Icons.svg" alt="#">
-                            <p class="extraSkills"> Git Knowledge</p>
+                            <p class="extraSkills"> <%= user.extra_skills[3] %></p>
                         </div>
     
                     </div>

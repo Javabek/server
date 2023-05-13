@@ -1,0 +1,10 @@
+{
+    "name" : "Jack",
+    "profession": "Software Engineer",
+    "age": 23,
+    "residence" : "South Korea",
+    "address" : "Busan",
+    "languages": ["Uzbek", "Korean", "English"],
+    "skills" : ["HTML", "CSS", "JS", "NodeJS", "Python"],
+    "extra_skills" : ["Bootstrap, Materialize", "Styling Sass", "Django, Flask", "Git knowledge"]
+}

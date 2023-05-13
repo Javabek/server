@@ -9,8 +9,7 @@ fs.readFile("database/user.json","utf-8", (err,data)=>{
   if(err){
     console.log(err);
   }else{
-    // user = JSON.parse(data)
-    console.log("no error");
+    user = JSON.parse(data)
   }
 })
 
@@ -35,11 +34,11 @@ app.post("/create-item", (req, res) => {
 });
 
 app.get("/author", (req, res) => {
-res.render("author");
+res.render("author", {user:user});
 })
 
 const server = http.createServer(app);
 let PORT = 3000;
 server.listen(PORT, function () {
-  console.log(`The server is running successfully on port ${PORT}`);
+  console.log(`The server is running successfully on port ${PORT}, http://localhost:${PORT}`);
 })
