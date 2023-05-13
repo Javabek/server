@@ -1,8 +1,9 @@
 const express = require("express");
 const app = express();
-const http = require("http");
+const fs = require("fs");
 
-const fs = require("fs")
+//calling mongoDb
+const db = require("./server").db();
 
 let user; 
 fs.readFile("database/user.json","utf-8", (err,data)=>{
@@ -37,8 +38,4 @@ app.get("/author", (req, res) => {
 res.render("author", {user:user});
 })
 
-const server = http.createServer(app);
-let PORT = 3000;
-server.listen(PORT, function () {
-  console.log(`The server is running successfully on port ${PORT}, http://localhost:${PORT}`);
-})
+module.exports = app;
