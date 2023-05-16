@@ -1,3 +1,4 @@
+const { log } = require("console");
 const express = require("express");
 const app = express();
 const fs = require("fs");
@@ -5,11 +6,11 @@ const fs = require("fs");
 //calling mongoDb
 const db = require("./server").db();
 
-let user; 
-fs.readFile("database/user.json","utf-8", (err,data)=>{
-  if(err){
+let user;
+fs.readFile("database/user.json", "utf-8", (err, data) => {
+  if (err) {
     console.log(err);
-  }else{
+  } else {
     user = JSON.parse(data)
   }
 })
@@ -21,21 +22,32 @@ app.use(express.urlencoded({ extended: true }));
 app.set("views", "views");
 app.set("view engine", "ejs");
 
-app.get("/hello", function (req, res) {
-  res.end("<h1> Hello World </h1>")
-});
 
 app.get("/", function (req, res) {
-  res.render("reja")
+  console.log("user entered /");
+  db.collection("plans")
+    .find()
+    .toArray((err, data) => {
+      if (err) {
+        console.log(err);
+        res.end("something went wrong")
+      } else {
+        res.render("reja", { items: data })
+      }
+    })
 });
 
 app.post("/create-item", (req, res) => {
-  console.log(req.body.newItem);
-  res.json({tets: "success"});
+  console.log("user entered create-item");
+
+  const new_reja = req.body.reja
+  db.collection("plans").insertOne({ reja: new_reja }, (err, data1) => {
+    res.json(data1.ops[0])
+  })
 });
 
 app.get("/author", (req, res) => {
-res.render("author", {user:user});
+  res.render("author", { user: user });
 })
 
 module.exports = app;
