@@ -18,10 +18,51 @@ document
         axios.post("/create-item", { reja: createField.value })
             .then((response) => {
                 document
-                .getElementById("item-list")
-                .insertAdjacentHTML("beforeend", itemTemplate(response.data));
-createField.value="";
-createField.focus();
+                    .getElementById("item-list")
+                    .insertAdjacentHTML("beforeend", itemTemplate(response.data));
+                createField.value = "";
+                createField.focus();
             })
             .catch((err) => { console.log("try again") })
     })
+
+document.addEventListener("click", function (e) {
+console.log(e.target);
+    if (e.target.classList.contains("delete-me")) {
+        if (confirm("Aniq o'chirmoqchismisiz")) {
+            axios
+                .post("/delete-item", { id: e.target.getAttribute("data-id") })
+                .then(response => { 
+                    e.target.parentElement.parentElement.remove();
+                })
+                .catch(err => { 
+                    console.log("Please try again");
+                })
+        } else {
+            alert("no is pressed")
+        }
+    }
+
+
+
+    if (e.target.classList.contains("edit-me")) {
+       let userInput = prompt("Insert the change", e.target.parentElement.parentElement.querySelector(".item-text").innerHTML);
+       if (userInput) {
+        axios.post("/edit-item", {id: e.target.getAttribute("data-id"),
+        newInput : userInput
+    }).then(response =>{
+e.target.parentElement.parentElement.querySelector(".item-text").innerHTML = userInput;
+    }).catch (err =>{
+        console.log(err);
+    })
+       }
+    }
+
+})
+
+document.getElementById("clean-all").addEventListener("click", function(){
+    axios.post("/delete-all", {delete_all :true}) .then(response=>{
+alert(response.data.state);
+document.location.reload();
+    } )
+})

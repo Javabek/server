@@ -17,7 +17,7 @@
     <div class="jumbotron">
       <form id="create-form" action="/create-item" method="post">
         <div class="input-group">
-          <input id="create-field" type="text" class="form-control"  placeholder="Yangi Xarid...">
+          <input id="create-field" type="text" class="form-control" name="reja" placeholder="Yangi Reja...">
           <div class="input-group-append">
             <button style="border-radius: 20px; margin-left: 10px;" type="submit" class="btn btn-primary">Yangi Reja
               Qo'shish</button>
@@ -33,7 +33,7 @@
 
       <% items.map(function(item){ %>
         <li class="list-group-item list-group-item-info d-flex align-items-center justify-content-between">
-          <span class="item-tex"><%= item.reja %></span>
+          <span class="item-text"><%= item.reja %></span>
           <div>
             <button data-id = "<%= item._id %>" class="edit-me btn btn-secondary btn-sm mr-1">Ozgartirish</button>
             <button data-id = "<%= item._id %>" class="delete-me btn btn-danger btn-sm">Ochirish</button>
