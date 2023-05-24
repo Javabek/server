@@ -1,47 +1,67 @@
-//task D
-const moment = require('moment');
-class Shop {
+//task E
 
-    constructor(nonSoni, kolaSoni, shurvaSoni) {
-        this.dukon = {
-            non: nonSoni, kola: kolaSoni, shurva: shurvaSoni
-        };
+function isPrime(number) {
+
+    if (number < 2 || !Number.isInteger(number)) {
+        return "Not a prime";
     }
 
-    qoldiq() {
-        console.log(this.dukon);
-        console.log(moment().format("hh:mm:ss"));
-    }
-
-    sotish(mahsulot, miqdor) {
-        if (this.dukon[mahsulot] < miqdor) {
-            console.log("Uzr, bizda mahsulot yetarli emas");
-            this.qoldiq();
-            console.log(moment().format("hh:mm:ss"));
-
-        } else {
-            this.dukon[mahsulot] -= miqdor;
-            console.log(`${mahsulot} ${miqdor} ta sotildi. Rahmat`);
-            this.qoldiq();
-            console.log(moment().format("hh:mm:ss"));
-
+    for (let i = 2; i < number; i++) {
+        if (number % i === 0) {
+            return false;
         }
     }
-
-    qushish(mahsulot, miqdor) {
-        this.dukon[mahsulot] += miqdor;
-        console.log(`Omborga ${mahsulot} ${miqdor} ta qushildi`);
-        this.qoldiq();
-        console.log(moment().format("hh:mm:ss"));
-
-    }
+    return true;
 }
+console.log(isPrime(41));
 
 
-let shop = new Shop(10, 10, 10);
-shop.qoldiq();
-shop.sotish("non", 4);
-shop.qushish("kola", 2);
+
+
+//task D
+// const moment = require('moment');
+// class Shop {
+
+//     constructor(nonSoni, kolaSoni, shurvaSoni) {
+//         this.dukon = {
+//             non: nonSoni, kola: kolaSoni, shurva: shurvaSoni
+//         };
+//     }
+
+//     qoldiq() {
+//         console.log(this.dukon);
+//         console.log(moment().format("hh:mm:ss"));
+//     }
+
+//     sotish(mahsulot, miqdor) {
+//         if (this.dukon[mahsulot] < miqdor) {
+//             console.log("Uzr, bizda mahsulot yetarli emas");
+//             this.qoldiq();
+//             console.log(moment().format("hh:mm:ss"));
+
+//         } else {
+//             this.dukon[mahsulot] -= miqdor;
+//             console.log(`${mahsulot} ${miqdor} ta sotildi. Rahmat`);
+//             this.qoldiq();
+//             console.log(moment().format("hh:mm:ss"));
+
+//         }
+//     }
+
+//     qushish(mahsulot, miqdor) {
+//         this.dukon[mahsulot] += miqdor;
+//         console.log(`Omborga ${mahsulot} ${miqdor} ta qushildi`);
+//         this.qoldiq();
+//         console.log(moment().format("hh:mm:ss"));
+
+//     }
+// }
+
+
+// let shop = new Shop(10, 10, 10);
+// shop.qoldiq();
+// shop.sotish("non", 4);
+// shop.qushish("kola", 2);
 
 
 // console.log("Jack Ma maslahatlari");
